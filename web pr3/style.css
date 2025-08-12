@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+    z-index: 1000;
+}
+.navbar .logo {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+}
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+}
+.navbar .nav-links li a:hover {
+    background: white;
+    color: black;
+    border-radius: 4px;
+}
+
+/* Hamburger Menu */
+.menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+#menu-toggle {
+    display: none;
+}
+
+/* Sections */
+section {
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+section:nth-child(even) {
+    background: #f4f4f4;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: black;
+    color: white;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+    .nav-links li {
+        border-bottom: 1px solid #444;
+    }
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+}
+
+/* Animation for dropdown */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
